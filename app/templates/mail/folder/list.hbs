@@ -1,0 +1,9 @@
+<ul>
+  {{#each model.emails as |email|}}
+    <li class="test-email-row">
+      {{#link-to 'mail.folder.email' email.id class="test-email-link"}}
+        {{email.subject}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
