@@ -1,9 +1,21 @@
-<ul>
+{{#paper-toolbar accent=true}}
+  <div class="md-toolbar-tools">
+    <span class="md-breadcrumb-page">{{model.name}}</span>
+  </div>
+{{/paper-toolbar}}
+
+{{#paper-list}}
   {{#each model.emails as |email|}}
-    <li class="test-email-row">
-      {{#link-to 'mail.folder.email' email.id class="test-email-link"}}
-        {{email.subject}}
-      {{/link-to}}
-    </li>
+    {{#link-to "mail.folder.email" email.id class="test-email-link"}}
+      {{#paper-item class="test-email-row"}}
+        {{#paper-checkbox}}{{/paper-checkbox}}
+        <span style="padding-right: 1rem;">{{paper-icon "star border"}}</span>
+
+        <p>Jane Sender{{!email.fromName}}</p>
+        <p>{{email.subject}}</p>
+        <p>03/23/2012{{!moment-calendar email.timestamp}}</p>
+      {{/paper-item}}
+    {{/link-to}}
+    {{paper-divider}}
   {{/each}}
-</ul>
+{{/paper-list}}
