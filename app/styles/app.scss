@@ -1,0 +1,14 @@
+@import 'ember-paper';
+
+
+.unread {
+  font-weight: bold;
+}
+
+.read {
+  background-color: #F7F6F6;
+}
+
+.alert-danger {
+  color: red;
+}

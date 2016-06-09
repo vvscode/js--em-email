@@ -1,1 +1,20 @@
-<h1>TODO: show an email</h1>
+<div style="display: flex;">
+  <h3 style="margin: 0; margin-top: 1rem;">This email is not spam {{!email.subject}}</h3>
+  <span style="flex: 1"></span>
+  {{#paper-button raised=true}}Reply{{/paper-button}}
+</div>
+<hr>
+<div style="display:flex;">
+  <span style="font-weight: bold;">Spammy McSpammer{{!email.fromName}}</span>
+  <span>&nbsp;notspam@example.com{{!email.fromEmail}}</span>
+  <span style="flex:1"></span>
+  <span>03/22/2016{{!moment-format email.timestamp}} (3 months ago){{!moment-from-now email.timestamp}})</span>
+</div>
+<p>Spam spam spam. Buy things!{{!email.body}}</p>
+{{!--{{#if replying}}--}}
+  {{!--{{paper-divider}}--}}
+  {{!--<div>--}}
+    {{!--<h3>Reply</h3>--}}
+    {{!--{{!compose-email to=email.fromEmail subject=(concat 'Re: ' email.subject)}}--}}
+  {{!--</div>--}}
+{{!--{{/if}}--}}
