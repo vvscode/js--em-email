@@ -3,4 +3,6 @@ import {
   setResolver
 } from 'ember-qunit';
 
+import './helpers/qunit-assertions';
+
 setResolver(resolver);
