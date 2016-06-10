@@ -71,5 +71,5 @@ skip('Edit contact allows removing phones');
 
 // contact is a mirage factory
 function visitEditContact(contact) {
-  visit(`/user/1/contacts/${contact.id}`);
+  visit(`/contacts/${contact.id}`);
 }

@@ -32,4 +32,8 @@ export default function() {
   this.get('/folders');
   this.get('/folders/:id');
 
-  this.post('/emails');}
+  this.post('/emails');
+
+  this.get('/contacts');
+}
+
