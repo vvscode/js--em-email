@@ -11,9 +11,9 @@
         {{#paper-checkbox}}{{/paper-checkbox}}
         <span style="padding-right: 1rem;">{{paper-icon "star border"}}</span>
 
-        <p>Jane Sender{{!email.fromName}}</p>
+        <p>{{email.fromName}}</p>
         <p>{{email.subject}}</p>
-        <p>03/23/2012{{!moment-calendar email.timestamp}}</p>
+        <p>{{moment-calendar email.timestamp}}</p>
       {{/paper-item}}
     {{/link-to}}
     {{paper-divider}}

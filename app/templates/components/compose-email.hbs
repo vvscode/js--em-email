@@ -1,8 +1,13 @@
-<form>
-  {{paper-input label="To"}}
+<form onsubmit={{action "send"}}>
+  <div class="test-to-validation">
+    {{#if errorMessage}}
+      {{errorMessage}}
+    {{/if}}
+  </div>
+  {{paper-input label="To" class="test-reply-to" value=to}}
   {{paper-input label="CC"}}
   {{paper-input label="BCC"}}
-  {{paper-input label="Subject"}}
-  {{paper-input textarea=true label="Message" attr-rows=5}}
-  {{#paper-button raised=true type="submit"}}Send{{/paper-button}}
+  {{paper-input label="Subject" class="test-reply-subject" value=subject}}
+  {{paper-input textarea=true label="Message" attr-rows=5 class="test-reply-body" value=body}}
+  {{#paper-button raised=true type="submit" class="test-send"}}Send{{/paper-button}}
 </form>
