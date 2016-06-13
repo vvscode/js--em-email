@@ -13,6 +13,10 @@ Router.map(function() {
       this.route('email', { path: 'email/:emailId' });
     });
   });
+  this.route('contacts', function() {
+    this.route('index', { path: '/' });
+    this.route('edit', { path: '/:contactId' });
+  });
 });
 
 export default Router;

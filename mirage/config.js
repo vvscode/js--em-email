@@ -1,3 +1,5 @@
+import Mirage from 'ember-cli-mirage';
+
 export default function() {
 
   // These comments are here to help you get started. Feel free to delete them.
@@ -28,8 +30,31 @@ export default function() {
     return emails.where({ folderId: request.queryParams.folder });
   });
 
-  this.get('/emails/:id');
   this.get('/folders');
   this.get('/folders/:id');
 
-  this.post('/emails');}
+  this.post('/emails');
+  this.get('/emails/:id');
+
+  this.get('/contacts');
+  this.get('/contacts/:id');
+  this.patch('/contacts/:id', function(db, request) {
+    if (request.requestBody.indexOf('with-error') >= 0) {
+      return new Mirage.Response(500, {}, {errors: ['There was an error saving this contact. Please try again.']});
+    }
+    return { errors: [] };
+  });
+  this.patch('/contact-phones/:id', function(db, request) {
+    if (request.requestBody.indexOf('with-error') >= 0) {
+      return new Mirage.Response(500, {}, {errors: ['There was an error saving this contact phone. Please try again.']});
+    }
+    return { errors: [] };
+  });
+  this.patch('/contact-emails/:id', function(db, request) {
+    if (request.requestBody.indexOf('with-error') >= 0) {
+      return new Mirage.Response(500, {}, {errors: ['There was an error saving this contact email. Please try again.']});
+    }
+    return { errors: [] };
+  });
+}
+

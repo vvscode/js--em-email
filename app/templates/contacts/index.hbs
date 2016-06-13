@@ -1,0 +1,17 @@
+<ul>
+  {{#each model as |contact|}}
+    <li class="test-contact">
+      <span class="test-contact-name">{{contact.name}}</span>
+      <ul class="phones">
+        {{#each contact.phones as |phone|}}
+          <li class="test-contact-primary-phone">{{phone.phone}}</li>
+        {{/each}}
+      </ul>
+      <ul class="emails">
+        {{#each contact.emails as |email|}}
+          <li class="test-contact-primary-email">{{email.email}}</li>
+        {{/each}}
+      </ul>
+    </li>
+  {{/each}}
+</ul>
