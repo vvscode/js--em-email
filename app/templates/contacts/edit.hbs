@@ -1,1 +1,20 @@
+{{#if contactSaveErr}}
+  <div class="alert-danger">{{contactSaveErr}}</div>
+{{/if}}
+
+{{#with model as  |contact|}}
+  {{input class="test-contact-name" value=contact.name }}
+  <ul class="phones">
+    {{#each contact.phones as |phone|}}
+      <li>{{input class="test-contact-phone" value=phone.phone}}</li>
+    {{/each}}
+  </ul>
+  <ul class="emails">
+    {{#each contact.emails as |email|}}
+      <li>{{input class="test-contact-email" value=email.email}}</li>
+    {{/each}}
+  </ul>
+  <button class="save-contact" {{action 'save'}}>Save</button>
+{{/with}}
+
 {{outlet}}

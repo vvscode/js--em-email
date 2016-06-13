@@ -30,7 +30,7 @@ test('user contacts list is sorted by name', function(assert) {
 
 test('displays info for a contact in each row', function(assert) {
   // Set up the test data
-  const contact = server.create('contact', {
+  server.create('contact', {
     name: 'Ann Smith',
     emails: [
       server.create('contact-email', { email: 'smith@example.com'}),

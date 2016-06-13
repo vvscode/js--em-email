@@ -14,6 +14,7 @@ Router.map(function() {
     });
   });
   this.route('contacts', function() {
+    this.route('index', { path: '/' });
     this.route('edit', { path: '/:contactId' });
   });
 });
